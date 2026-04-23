@@ -1,4 +1,4 @@
-package com.green.menus;
+package com.green.menus.controller;
 
 import java.util.List;
 
@@ -26,7 +26,12 @@ public class MenuController {
 		model.addAttribute("msg", "하하");
 		model.addAttribute("menuList", menuList);
 		
-		return "menus/list";
+		return "menus/list"; //WEB-INF/views/ menus/list .jsp
+	}
+	// 새 메뉴 추가 /Menus/WriteForm
+	@RequestMapping("/Menus/WriteForm")
+	public String writeForm() {
+		return "menus/write";
 	}
 }
 

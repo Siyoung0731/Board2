@@ -5,13 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>list</title>
 <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="/css/common.css" rel="stylesheet" /> 
-<style>
-</style>
-<link rel="shortcut icon" href="/img/favicon2.png" type="image/x-icon">
-<link href="/css/common.css" rel="stylesheet" />
 <style>
 </style>
 </head>
