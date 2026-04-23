@@ -5,15 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
 <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="/css/common.css" rel="stylesheet" /> 
 <style>
 </style>
-=======
-<link rel="shortcut icon" href="/img/favicon2.png" type="image/x-icon">
-<link href="/css/common.css" rel="stylesheet" />
->>>>>>> branch 'main' of https://github.com/HeoTaehoon7/Board2.git
 </head>
 <body>
   <main>
