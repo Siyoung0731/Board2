@@ -9,6 +9,30 @@
 <link href="/css/common.css" rel="stylesheet" /> 
 </head>
 <body>
-	<h2>새 메뉴 추가</h2>
+	<main>
+		<h2>메뉴 등록</h2>
+		<form action="/Menus/Write" method="get">
+		  <table>
+		    <tr>
+		      <td>메뉴 아이디</td>
+		      <td><input type="text" name="menu_id"  /></td>
+		    </tr>
+		    <tr>
+		      <td>메뉴 이름</td>
+		      <td><input type="text" name="menu_name" /></td>
+		    </tr>
+		    <tr>
+   		      <td>메뉴 순서</td>
+		      <td><input type="text" name="menu_seq" /></td>
+		    </tr>
+		    <tr>
+		      <td colspan="2">
+		      	<input type="submit" value="추가" />
+		      	<input type="button" value="목록" />
+		      </td>
+		    </tr>
+		  </table>
+		</form>
+	</main>
 </body>
 </html>

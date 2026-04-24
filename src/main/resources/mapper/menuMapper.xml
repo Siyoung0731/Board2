@@ -8,10 +8,12 @@
 	<select id="getMenuList"
 	        resultType="com.green.menus.dto.MenuDTO">
 			
-	SELECT     MENU_ID, MENu_NAME, MENU_SEQ
+	SELECT     MENU_ID, MENU_NAME, MENU_SEQ
 	 FROM      MENUS
-	 ORDER BY  MENU_SEQ ASC
-	 	
+	 ORDER BY  MENU_SEQ ASC	 	
 	</select>
+	<insert id="insertMenu">
+		INSERT INTO MENUS VALUES( #{ menu_id }, #{ menu_name }, #{ menu_seq } )
+	</insert>
   
 </mapper>

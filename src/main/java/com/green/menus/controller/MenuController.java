@@ -31,7 +31,26 @@ public class MenuController {
 	// 새 메뉴 추가 /Menus/WriteForm
 	@RequestMapping("/Menus/WriteForm")
 	public String writeForm() {
-		return "menus/write";
+		return "menus/write"; // write.jsp 로 이동
+	}
+	// Menus/Write
+	// http://localhost:8080/Menus/Write?menu_id=MENU07&menu_name=GIT&menu_seq=7
+	@RequestMapping("/Menus/Write")
+	public String write(MenuDTO dto, Model model) {
+		// 넘어온 값
+		System.out.println("menu_id=" + dto.getMenu_id());
+		System.out.println("menu_name=" + dto.getMenu_name());
+		System.out.println("menu_seq=" + dto.getMenu_seq());
+		
+		// 다시 조회 -> menuList
+		List<MenuDTO> menuList = menuMapper.getMenuList();
+		
+		model.addAttribute("menuList", menuList);
+
+		// DB 에 저장
+		menuMapper.insertMenu(dto);
+			
+		return "menus/list";
 	}
 }
 

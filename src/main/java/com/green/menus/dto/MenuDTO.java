@@ -4,11 +4,11 @@ public class MenuDTO {
 	// Field
 	private String  menu_id;
 	private String  menu_name;
-	private int     menu_seq;
+	private Integer     menu_seq;
 	
 	// Constructor
 	public MenuDTO() {}
-	public MenuDTO(String menu_id, String menu_name, int menu_seq) {
+	public MenuDTO(String menu_id, String menu_name, Integer menu_seq) {
 		this.menu_id = menu_id;
 		this.menu_name = menu_name;
 		this.menu_seq = menu_seq;
@@ -30,7 +30,7 @@ public class MenuDTO {
 	public int getMenu_seq() {
 		return menu_seq;
 	}
-	public void setMenu_seq(int menu_seq) {
+	public void setMenu_seq(Integer menu_seq) {
 		this.menu_seq = menu_seq;
 	}
 	
