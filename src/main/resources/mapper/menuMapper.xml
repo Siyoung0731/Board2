@@ -15,5 +15,7 @@
 	<insert id="insertMenu">
 		INSERT INTO MENUS VALUES( #{ menu_id }, #{ menu_name }, #{ menu_seq } )
 	</insert>
-  
+	<delete id="deleteMenu">
+		DELETE FROM MENUS WHERE MENU_ID = #{menu_id}
+	</delete>
 </mapper>

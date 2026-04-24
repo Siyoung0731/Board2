@@ -12,6 +12,8 @@ public interface MenuMapper {
 	List<MenuDTO> getMenuList();
 
 	void insertMenu(MenuDTO dto);
+
+	void deleteMenu(String menu_id);
 	
 }
 

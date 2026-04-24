@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.menus.dto.MenuDTO;
 import com.green.menus.mapper.MenuMapper;
@@ -35,24 +36,59 @@ public class MenuController {
 	}
 	// Menus/Write
 	// http://localhost:8080/Menus/Write?menu_id=MENU07&menu_name=GIT&menu_seq=7
+//	@RequestMapping("/Menus/Write")
+//	public String write(MenuDTO dto, Model model) {
+//		// 넘어온 값
+//		System.out.println("menu_id=" + dto.getMenu_id());
+//		System.out.println("menu_name=" + dto.getMenu_name());
+//		System.out.println("menu_seq=" + dto.getMenu_seq());
+//		
+//		// 다시 조회 -> menuList
+//		List<MenuDTO> menuList = menuMapper.getMenuList();
+//		
+//		model.addAttribute("menuList", menuList);
+//
+//		// DB 에 저장
+//		menuMapper.insertMenu(dto);
+//			
+//		return "menus/list";
+//	}
+	//String menu_id, String menu_name, int menu_seq
 	@RequestMapping("/Menus/Write")
 	public String write(MenuDTO dto, Model model) {
-		// 넘어온 값
-		System.out.println("menu_id=" + dto.getMenu_id());
-		System.out.println("menu_name=" + dto.getMenu_name());
-		System.out.println("menu_seq=" + dto.getMenu_seq());
+		String menu_id = dto.getMenu_id();
+		String menu_name = dto.getMenu_name();
+		int menu_seq = dto.getMenu_seq();
 		
-		// 다시 조회 -> menuList
+		System.out.println("menu_id=" + menu_id);
+		System.out.println("menu_name=" + menu_name);
+		System.out.println("menu_seq=" + menu_seq);
+		
+		// menuMapper.getMenuList 에 추가할 값들을 넣어 줌
 		List<MenuDTO> menuList = menuMapper.getMenuList();
+				
+		model.addAttribute("menuList" + menuList);
 		
-		model.addAttribute("menuList", menuList);
-
-		// DB 에 저장
 		menuMapper.insertMenu(dto);
-			
+		
+		return "menus/list";
+	}
+	@RequestMapping("/Menus/DeleteForm") 
+	public String deleteForm() {
+		return "menus/delete";
+	}
+	@RequestMapping("/Menus/Delete")
+	public String delete( @RequestParam("menu_id") String menu_id, Model model) {
+		System.out.println("menu_id=" + menu_id);
+		
+		model.addAttribute("menu_id" + menu_id);
+		
+		menuMapper.deleteMenu(menu_id);
+				
 		return "menus/list";
 	}
 }
+
 
 
 
