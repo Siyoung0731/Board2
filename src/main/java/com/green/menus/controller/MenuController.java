@@ -79,17 +79,22 @@ public class MenuController {
 				
 		return "redirect:/Menus/List";
 	}
-	@RequestMapping("/Menus/UpdateForm")
-	public String updateForm() {
-		return "menus/update";
-	}
 	// 메뉴 수정 
-	@RequestMapping("/Menus/Update")
-	public String update(MenuDTO dto, Model model) {
+	@RequestMapping("/Menus/UpdateForm")
+	public String updateForm(MenuDTO dto, Model model) {
 		System.out.println("넘어온 DTO : " + dto);
 		// 수정할 자료 db 에서 검색 : 수정할 정보가 담긴 조회된 menu
 		MenuDTO menu = menuMapper.getMenu(dto);
 		model.addAttribute("menu", menu);
+		System.out.println("조회한 menuDTO : " + menu);
+		
+		return "menus/update";
+	}
+	@RequestMapping("/Menus/Update")
+	public String update(MenuDTO dto) {
+		
+		//넘어온 정보로 수정 db 를 수정한다
+		menuMapper.updateMenu(dto);
 		
 		return "redirect:/Menus/List";
 	}
