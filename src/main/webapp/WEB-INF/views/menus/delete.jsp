@@ -11,7 +11,7 @@
 	<form action="/Menus/Delete">
 		<table>
 			<tr>
-				<td>메뉴 아이디</td>
+				<td>삭제할 메뉴 아이디</td>
 				<td><input type="text" name="menu_id"></td>
 			</tr>
 		    <tr>

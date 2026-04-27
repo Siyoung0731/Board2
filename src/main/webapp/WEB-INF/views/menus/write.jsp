@@ -7,6 +7,30 @@
 <title>write</title>
 <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="/css/common.css" rel="stylesheet" /> 
+<style>
+	table {
+		witdh : 100%
+	}
+	td {
+		padding: 5px 10px;
+		text-align: center;
+		&:nth-of-type(1) {
+			background-color: black;
+			color:white;
+			border:1px solid white;
+		}
+	}
+	tr:last-child > td {
+		background-color: white;
+		border: 1px solid black;
+	}
+	input[type=text], input[type=number] {
+		width: 100%;
+	}
+	input[type=submit], input[type=button] {
+		width: 100px;
+	}
+</style>
 </head>
 <body>
 	<main>

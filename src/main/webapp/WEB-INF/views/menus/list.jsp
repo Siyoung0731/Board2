@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,23 @@
 <link href="/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <link href="/css/common.css" rel="stylesheet" /> 
 <style>
+	table {width:"100%"}
+	td {
+		padding : 5px;
+		text-align : center;
+	}
+	tr:first-child {
+		background-color : black;
+		color:white; 
+		
+		td {
+			border : 1px solid white;
+		}
+	}
+	tr:nth-of-type(2) td {
+		text-align: right;
+		padding-right: 20px;
+	}
 </style>
 </head>
 <body>
@@ -28,13 +45,14 @@
   			  [<a href="/">Home</a>]
   		  </td>
 	  	</tr>
+	  	
 	  	<c:forEach var="menu" items="${menuList}">
 	  	<tr>
   		  <td>${ menu.menu_id }</td>
   		  <td>${ menu.menu_name }</td>
   		  <td>${ menu.menu_seq }</td>
   		  <td><a href="/Menus/Delete?menu_id=${menu.menu_id}">삭제</a></td>
-  		  <td><a href="/Menus/Update">수정</a></td>
+  		  <td><a href="/Menus/UpdateForm?menu_id=${menu.menu_id}">수정</a></td>
 	  	</tr>
 	  	</c:forEach>
 	  </table>

@@ -13,7 +13,7 @@
 	 ORDER BY  MENU_SEQ ASC	 	
 	</select>
 	<insert id="insertMenu">
-		INSERT INTO MENUS VALUES( #{ menu_id }, #{ menu_name }, #{ menu_seq } )
+		INSERT INTO MENUS( MENU_id, MENU_NAME, MENU_SEQ ) VALUES( #{ menu_id }, #{ menu_name }, #{ menu_seq } )
 	</insert>
 	<delete id="deleteMenu">
 		DELETE FROM MENUS WHERE MENU_ID = #{menu_id}

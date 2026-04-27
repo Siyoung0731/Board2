@@ -13,8 +13,7 @@ public interface MenuMapper {
 
 	void insertMenu(MenuDTO dto);
 
-	void deleteMenu(String menu_id);
-	
+	void deleteMenu(MenuDTO dto);	
 }
 
 

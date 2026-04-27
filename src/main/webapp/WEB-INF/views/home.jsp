@@ -17,6 +17,7 @@
     <div><a href="/Menus/WriteForm">새 메뉴추가</a></div>
     <div><a href="/Menus/List">메뉴목록</a></div>  
     <div><a href="/Menus/DeleteForm">메뉴 삭제</a></div>
+    <div><a href="/Menu/UpdateForm">메뉴 수정</a></div>
   </main>
   
 </body>
