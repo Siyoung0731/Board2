@@ -17,7 +17,9 @@ public interface MenuMapper {
 
 	MenuDTO getMenu(MenuDTO dto);
 
-	void updateMenu(MenuDTO dto);	
+	void updateMenu(MenuDTO dto);
+
+	void insertMenu2(MenuDTO dto);	
 }
 
 

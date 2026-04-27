@@ -79,7 +79,7 @@ public class MenuController {
 				
 		return "redirect:/Menus/List";
 	}
-	// 메뉴 수정 
+	// 메뉴 수정 - getMenu : 목록에서 수정 버튼을 누른 후 실행
 	@RequestMapping("/Menus/UpdateForm")
 	public String updateForm(MenuDTO dto, Model model) {
 		System.out.println("넘어온 DTO : " + dto);
@@ -88,13 +88,26 @@ public class MenuController {
 		model.addAttribute("menu", menu);
 		System.out.println("조회한 menuDTO : " + menu);
 		
-		return "menus/update";
+		return "menus/update"; // update.jsp 로 이동
 	}
 	@RequestMapping("/Menus/Update")
 	public String update(MenuDTO dto) {
 		
 		//넘어온 정보로 수정 db 를 수정한다
+		// sqlsession 코드
 		menuMapper.updateMenu(dto);
+		
+		return "redirect:/Menus/List";
+	}
+	// /Menus/WriteForm2 - 메뉴 이름으로만 추가하기
+	@RequestMapping("/Menus/WriteForm2")
+	public String writeForm2() {
+		return "menus/write2";
+	}
+	@RequestMapping("/Menus/Write2")
+	public String write2(MenuDTO dto) {
+		
+		menuMapper.insertMenu2(dto);
 		
 		return "redirect:/Menus/List";
 	}
